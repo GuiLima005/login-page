@@ -26,7 +26,7 @@
 */
 .linha {
   content: " ";
-  background-color: #fff;
+  background-color: black;
   display: block;
   height: 2px;
   width: 150px;
@@ -39,11 +39,11 @@
 .container,
 form {
   text-align: center;
+  display: initial;
   position: relative;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -55,15 +55,41 @@ form {
 }
 
 /* For devices larger than 400px */
-@media (min-width: 400px) {
+@media (max-width: 400px) {
   .container {
     width: 85%;
     padding: 0;
   }
+
+  .card{
+    margin-bottom: 20px;
+    visibility: hidden;
+    color: white;
+  }
+
+  .linha{
+    background-color:white;
+  }
+
+  .child-card{
+    visibility: visible;
+  }
+
+  .container,
+  form {
+  text-align: center;
+  display: initial;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (max-width: 550px) {
   .container {
     width: 80%;
   }
@@ -211,6 +237,30 @@ form {
     margin-left: 52%;
   }
 
+  .container,
+  form {
+  text-align: center;
+  display: initial;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+  .card{
+    margin-bottom: 20px;
+    visibility: hidden;
+    color: white;
+  }
+
+  .child-card{
+    visibility: visible;
+  }
+  
+  .linha{
+    background-color:white;
+  }
 }
 
 
@@ -224,21 +274,33 @@ html {
 }
 
 body {
-
   font-size: 1.5em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
-  font-weight: 400;
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: black;
   height: 100vh;
   margin: 0;
   background-image: url(../img/fundo-git.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
+.card {
+  margin: 0.5rem 0 1rem 0;
+  width: 500px;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 70px;
+  height: 700px;
+}
 
 /* Typography
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -250,7 +312,8 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 700; 
+  font-family: 'Inter', sans-serif;
 }
 
 h1 {
@@ -344,11 +407,11 @@ input[type="button"] {
   padding: 0 30px;
   color: #555;
   text-align: center;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -413,6 +476,12 @@ input[type="button"].button-primary:focus {
   width: 340px;
 }
 
+.fa-github:before {
+    content: "\f09b";
+    margin-top: 7px;
+    display: flex;
+}
+
 
 /* Forms
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -474,7 +543,8 @@ label,
 legend {
   display: block;
   margin-bottom: .5rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.3em;
 }
 
 fieldset {
@@ -586,6 +656,7 @@ ul,
 ol,
 form {
   margin-bottom: 2.5rem;
+  font-weight: 600;
 }
 
 
